@@ -83,6 +83,7 @@ while True:
             print(f"Desconto : R${subtotal:.2f}")
             print(f"Valor total : R${subtotal - desconto:.2f}")
             print("-" * 30)
+            carrinho.clear()
     elif opcao == 0:
         print("Saindo do sistema...")
         break
