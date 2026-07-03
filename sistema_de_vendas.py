@@ -47,14 +47,30 @@ while True:
             }
             carrinho.append(item)
             estoque_produtos[id_produto]['quantidade'] -= qtd_produto
-    elif opcao == 3:(
-         print("Vizualisando carrinho!"))
+            print (item)
+        else:
+            print(f"Quantidade indisponivel, temos apenas {estoque_produtos[id_produto]["quantidade"]} no estoque.")
+
+    elif opcao == 3:
+        print("Vizualisando carrinho!")
+        subtotal = 0
+        for i in carrinho:
+            print (f"{i["qtd"]}x {i["nome"]}no valor de R${i["preco"]}(cada)\nTotal R${i["preco_total"]}")
+            subtotal += i ["preco_total"]
+        print (f"Subtotal da Compra R${subtotal}")
     elif opcao == 4:
-        print("Finalizando compra!")
-    elif opcao == 5:
-        print ("Saindo do sistema!")
-        break
-    else:
-        print ("ERRO, opcao inexistente!")
+            print("Finalizando compra!")
+            subtotal = 0
+            for i in carrinho:
+                subtotal += i["preco_total"]
+            cupom = input("Digite o cupom")
+            if cupom == "DEV10":
+            c_desconto10 = subtotal * 0.10
+            total = subtotal - c_desconto10
+            print(f"cupom aplicado!Desconto:R${c_desconto10:2f}")
+            elif cupom == "DEV20":
+            c_desconto20 = subtotal * 0.20
+            total = subtotal - c_desconto20
+
 
 
