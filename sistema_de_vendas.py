@@ -37,17 +37,17 @@ while True:
         if id_produto in estoque_produtos:
             qtd_produto = int(input("Quantas unidades:"))
             if qtd_produto <= 0:
-             print("Quantidade invalida!")
+                print("Quantidade invalida!")
             elif qtd_produto <= estoque_produtos[id_produto]["quantidade"]:
-             item = {
+                item = {
                 "qtd" : qtd_produto,
                 "nome" : estoque_produtos[id_produto]["nome"],
                 "preco" : estoque_produtos[id_produto]["preco"],
-                "preco_total" : qtd_produto * estoque_produtos[id_produto]["preco"],
-            }
-            carrinho.append(item)
-            estoque_produtos[id_produto]['quantidade'] -= qtd_produto
-            print (item)
+                "preco_total" : qtd_produto * estoque_produtos[id_produto]["preco"]
+                }
+                carrinho.append(item)
+                estoque_produtos[id_produto]['quantidade'] -= qtd_produto
+                print (item)
         else:
             print(f"Quantidade indisponivel, temos apenas {estoque_produtos[id_produto]["quantidade"]} no estoque.")
 
