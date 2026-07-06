@@ -67,13 +67,13 @@ while True:
             print("O seu carrinho ainda está vazio!Não é possivel finalizar a compra.")
         else:
             desconto = 0
-            cupom = input("Digite um cupom de desconto ou caso não tenha um, pressione ente.")
+            cupom = input("Digite um cupom de desconto ou caso não tenha um, pressione enter.")
             if cupom == "DEV10":
                 desconto = subtotal * 0.1
                 print("Cupom válido!Voce obteve 10% de desconto!")
             elif cupom == "DEV20" and subtotal > 500:
-                desconto = subtotal * 0.1
-                print("Cupom válido!Voce obteve 10%  de desconto!")
+                desconto = subtotal * 0.2
+                print("Cupom válido!Voce obteve 20%  de desconto!")
             elif len(cupom) == 0: #len conta os caracteres
                 print("Nenhum cupom foi adicionado!")
             else:
